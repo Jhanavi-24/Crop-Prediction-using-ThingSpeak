@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Recommendation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e1f0da;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #b3a398;
+      }
+      .result-box {
+        width: 25%;
+        padding: 10px;
+        margin: 0 auto 20px;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 18px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #b3a398;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #b3a398;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>IOT Crop Recommendation System</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>pH</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Rain Fall</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr>
+            <td>{{ph}}</td>
+            <td>{{temp}}</td>
+            <td>{{hum}}</td>
+            <td>{{rain}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="result-box" id="result-box">{{ output }}</div>
+      <form action="/predict" method="POST">
+        <button type="submit">Refresh</button>
+      </form>
+    </div>
+  </body>
+</html>
